@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var home_component_1 = require("./home/home.component");
+var employee_component_1 = require("./employees/employee.component");
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }
@@ -17,7 +17,7 @@ AppRoutingModule = __decorate([
     core_1.NgModule({
         imports: [
             router_1.RouterModule.forRoot([
-                { path: '', component: home_component_1.HomeComponent },
+                { path: '', component: employee_component_1.EmployeeComponent },
                 { path: '**', redirectTo: '', pathMatch: 'full' }
             ], { preloadingStrategy: router_1.PreloadAllModules })
         ],
