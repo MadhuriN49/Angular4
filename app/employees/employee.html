@@ -1,6 +1,6 @@
 <div class="container">  
     <h4>Employess List</h4>  
-    <button class="btn btn-primary" style="float:right" (click)="addEmp()">Add Employee</button><br>  
+    <button class="btn btn-primary" style="float:right" (click)="addEdit()">Add Employee</button><br>  
     <table class="table table-hover">
       <thead>
         <tr class="info">
@@ -12,18 +12,48 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor = "let emp of employees">
+        <tr *ngFor = "let emp of employees; let i = index; trackBy: trackByFn">
           <td>{{emp.id}}</td>
           <td>{{emp.name}}</td>
           <td>{{emp.profile}}</td>
-          <td><button class="btn btn-primary" (click)="editEmp()">Edit</button></td>
+          <td><button class="btn btn-primary" (click)="addEdit(emp,i)">Edit</button></td>
           <td><button class="btn btn-danger" (click)="deleteEmp()">Delete</button></td>
         </tr>
         
       </tbody>
     </table>
+    
+    <!-- edit employee form  -->
+    <form *ngIf="editForm">
+        <h2>New Employee</h2>
+        <div class="form-group">
+            <div class="col-md-7">
+              <label >Id:</label>
+              <input type="text" class="form-control" name = "id" [(ngModel)] ="editedEmployee.id">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-7">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" name="name"[(ngModel)] ="editedEmployee.name">
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <div class="col-md-7">
+                  <label for="profile">Profile:</label>
+                  <input type="text" class="form-control" name="profile" [(ngModel)] ="editedEmployee.profile">
+             </div>
+        </div><br><br>
 
-    <form *ngIf="showForm">
+        <div class="col-sm-6" style="padding:10px">
+            <button type="submit" class="btn btn-primary" (click)="submit(editedEmployee)">Submit</button>
+            <button type="submit" class="btn btn-warning" (click)="cancelEdit()">Cancel</button>
+        </div>
+    </form>
+
+    <!-- new employee form -->
+    <form *ngIf="isNewForm">
         <h2>New Employee</h2>
         <div class="form-group">
             <div class="col-md-7">
@@ -46,10 +76,9 @@
         </div><br><br>
 
         <div class="col-sm-6" style="padding:10px">
-            <button type="submit" class="btn btn-primary" (click)="addEdit(newEmployee)">Submit</button>
+            <button type="submit" class="btn btn-primary" (click)="submit(newEmployee)">Submit</button>
             <button type="submit" class="btn btn-warning" (click)="cancel()">Cancel</button>
         </div>
     </form>
-
   </div>
    
