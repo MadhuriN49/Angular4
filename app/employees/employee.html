@@ -1,14 +1,28 @@
 <div class="container">  
-    <h4>Employess List</h4>  
-    <button class="btn btn-primary" style="float:right" (click)="addEdit()">Add Employee</button><br>  
+    <h3>Employess List</h3>  
+    <div class="row">    
+      <div class="add-search">   
+        <div class="col-md-4">
+          <button class="btn btn-primary" style="float:left;" (click)="addEdit()">Add Employee</button>
+        </div>
+        <div class="col-md-3" style="float:right;">
+          <div class="search">
+             <input class="form-control"  type="text" [(ngModel)] = "search"> 
+             <i class="fa fa-search" aria-hidden="true"></i> 
+          </div>
+        </div>
+      </div>
+    </div>  <br>
+    
+    
     <table class="table table-hover">
       <thead>
         <tr class="info">
           <th>Id</th>
           <th>Name</th>
           <th>Profile</th>
-          <td>Edit</td>
-          <td>Delete</td>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -22,10 +36,10 @@
         
       </tbody>
     </table>
-    
+
     <!-- edit employee form  -->
     <form *ngIf="editForm">
-        <h2>Edit Employee</h2>
+        <h3>Edit Employee</h3>
         <div class="form-group">
             <div class="col-md-7">
               <label >Id:</label>
@@ -54,7 +68,7 @@
 
     <!-- new employee form -->
     <form *ngIf="isNewForm">
-        <h2>New Employee</h2>
+        <h3>New Employee</h3>
         <div class="form-group">
             <div class="col-md-7">
               <label >Id:</label>

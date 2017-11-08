@@ -40,8 +40,8 @@ var EmployeeComponent = (function () {
     };
     EmployeeComponent.prototype.submit = function (emp) {
         if (this.isNewForm) {
-            // this.employees.push(emp);
-            // this.newEmployee = {};
+            this.employees.push(emp);
+            this.newEmployee = {};
         }
         else {
             this.employees.indexOf(this.copyEditObj);

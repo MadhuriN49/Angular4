@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {HttpModule} from '@angular/http';
 import { AppRoutingModule } from './app.routing';
+import { Ng2FilterPipe } from 'ng2-filter-pipe';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
