@@ -18,6 +18,12 @@ var EmployeeService = (function () {
             { id: 3, name: "Soubhgya", profile: "Developer" }
         ];
     };
+    EmployeeService.prototype.addEmpService = function () {
+    };
+    EmployeeService.prototype.upateEmpService = function () {
+    };
+    EmployeeService.prototype.deleteEmpService = function () {
+    };
     return EmployeeService;
 }());
 EmployeeService = __decorate([

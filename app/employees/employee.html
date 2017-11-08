@@ -17,7 +17,7 @@
           <td>{{emp.name}}</td>
           <td>{{emp.profile}}</td>
           <td><button class="btn btn-primary" (click)="addEdit(emp,i)">Edit</button></td>
-          <td><button class="btn btn-danger" (click)="deleteEmp()">Delete</button></td>
+          <td><button class="btn btn-danger" (click)="delete(i)">Delete</button></td>
         </tr>
         
       </tbody>
@@ -25,7 +25,7 @@
     
     <!-- edit employee form  -->
     <form *ngIf="editForm">
-        <h2>New Employee</h2>
+        <h2>Edit Employee</h2>
         <div class="form-group">
             <div class="col-md-7">
               <label >Id:</label>
@@ -48,7 +48,7 @@
 
         <div class="col-sm-6" style="padding:10px">
             <button type="submit" class="btn btn-primary" (click)="submit(editedEmployee)">Submit</button>
-            <button type="submit" class="btn btn-warning" (click)="cancelEdit()">Cancel</button>
+            <button type="submit" class="btn btn-warning" (click)="cancel()">Cancel</button>
         </div>
     </form>
 

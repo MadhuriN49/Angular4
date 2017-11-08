@@ -18,6 +18,8 @@ var EmployeeComponent = (function () {
         this.newEmployee = {};
         this.isNewForm = false;
         this.editForm = false;
+        this.editedEmployee = {};
+        this.copyEditObj = {};
     }
     ;
     EmployeeComponent.prototype.ngOnInit = function () {
@@ -27,7 +29,6 @@ var EmployeeComponent = (function () {
         this.employees = this.empService.getAllEmployess();
     };
     EmployeeComponent.prototype.addEdit = function (emp, index) {
-        console.log("index is " + index);
         if (!emp) {
             this.isNewForm = true;
             return;
@@ -35,17 +36,29 @@ var EmployeeComponent = (function () {
         this.editForm = true;
         this.isNewForm = false;
         this.editedEmployee = emp;
-        //this.employees.push(emp);
+        this.copyEditObj = emp;
     };
     EmployeeComponent.prototype.submit = function (emp) {
         if (this.isNewForm) {
-            this.employees.push(emp);
+            // this.employees.push(emp);
+            // this.newEmployee = {};
+        }
+        else {
+            this.employees.indexOf(this.copyEditObj);
+            this.employees.splice(this.employees.indexOf(this.copyEditObj), 1, emp);
+            this.editForm = false;
+        }
+    };
+    EmployeeComponent.prototype.cancel = function () {
+        if (this.isNewForm) {
             this.newEmployee = {};
         }
         else {
-            this.employees.splice(1, emp.id - 1, emp);
-            this.editForm = false;
+            this.editedEmployee = {};
         }
+    };
+    EmployeeComponent.prototype.delete = function (index) {
+        this.employees.splice(index, 1);
     };
     return EmployeeComponent;
 }());

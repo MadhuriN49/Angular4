@@ -14,7 +14,8 @@ import {EmployeeService} from './employee.service';
     newEmployee : any = {} ;
     isNewForm : boolean = false;
     editForm : boolean = false;
-    editedEmployee : Employee ;
+    editedEmployee : any = {} ;
+    copyEditObj : any = {};
     index : number;
     constructor ( private empService : EmployeeService ){
 
@@ -28,7 +29,6 @@ import {EmployeeService} from './employee.service';
     }
 
     addEdit(emp : Employee, index:number){
-        console.log("index is " + index);
         if(!emp){
             this.isNewForm = true ;
             return
@@ -36,16 +36,29 @@ import {EmployeeService} from './employee.service';
         this.editForm = true ;
         this.isNewForm = false ;
         this.editedEmployee = emp ;
-        //this.employees.push(emp);
+        this.copyEditObj = emp;
     }
 
     submit ( emp: Employee){
         if(this.isNewForm){
-            this.employees.push(emp);
-            this.newEmployee = {};
+            // this.employees.push(emp);
+            // this.newEmployee = {};
         }else{
-            this.employees.splice(1, emp.id-1 , emp);
+            this.employees.indexOf(this.copyEditObj);
+            this.employees.splice(this.employees.indexOf(this.copyEditObj),1,emp);
             this.editForm = false ;
         }
+    }
+
+    cancel(){
+        if(this.isNewForm){
+            this.newEmployee = {};
+        }else{
+            this.editedEmployee = {};
+        }
+    }
+
+    delete(index : number){
+        this.employees.splice(index , 1)
     }
  }
