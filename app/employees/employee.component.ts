@@ -44,7 +44,6 @@ import {EmployeeService} from './employee.service';
             this.employees.push(emp);
             this.newEmployee = {};
         }else{
-            this.employees.indexOf(this.copyEditObj);
             this.employees.splice(this.employees.indexOf(this.copyEditObj),1,emp);
             this.editForm = false ;
         }
@@ -54,11 +53,11 @@ import {EmployeeService} from './employee.service';
         if(this.isNewForm){
             this.newEmployee = {};
         }else{
-            this.editedEmployee = {};
+            this.editedEmployee = this.copyEditObj  ;
         }
     }
 
     delete(index : number){
-        this.employees.splice(index , 1)
+        this.employees.splice(index , 1);
     }
  }

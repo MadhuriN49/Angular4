@@ -44,7 +44,6 @@ var EmployeeComponent = (function () {
             this.newEmployee = {};
         }
         else {
-            this.employees.indexOf(this.copyEditObj);
             this.employees.splice(this.employees.indexOf(this.copyEditObj), 1, emp);
             this.editForm = false;
         }
@@ -54,7 +53,7 @@ var EmployeeComponent = (function () {
             this.newEmployee = {};
         }
         else {
-            this.editedEmployee = {};
+            this.editedEmployee = this.copyEditObj;
         }
     };
     EmployeeComponent.prototype.delete = function (index) {

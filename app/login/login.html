@@ -1,0 +1,27 @@
+<div class="conatiner"> 
+    <!-- <div class="row"> -->
+        <div class="login">
+            <form class="form-row">
+                <!-- <div class="col-md-5"> -->
+                    <div class="login-fields">
+                        <input type="text" class="form-control" placeholder="User Name" name ="uName" [(ngModel)] ="uName">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                <!-- </div> -->
+                
+                <!-- <div class="col-md-5"> -->
+                    <div class="login-fields">
+                      <input type="password" class="form-control" placeholder="Password" name ="pwd" [(ngModel)] = "pwd" >
+                      <i class="fa fa-key" aria-hidden="true"></i>
+                    </div>  
+                <!-- </div> -->
+
+                <!-- <div class="col-md-2"> -->
+                    <div class="login-fields"> 
+                        <button type="submit" class="btn btn-primary" (click) = "submit(uName,pwd)" > Submit</button>
+                    </div>
+                <!-- </div> -->
+            </form>
+        </div>
+    </div>
+<!-- </div> -->

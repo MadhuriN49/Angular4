@@ -1,0 +1,15 @@
+<div class="container">  
+    <div *ngFor ="let dashboardContent of dashboardContents">
+        <div class="col-md-4">
+            <div class="content">
+                <img src= {{dashboardContent.imgPath}} alt="dabba">
+                <div class="person-info"> 
+                   <h4> {{dashboardContent.title}}  </h4> 
+                    <p>{{dashboardContent.content}}</p>
+                    <h5>{{dashboardContent.authorName}} </h5> 
+                    <!-- <h3> {{dashboardContent.datePosted}}</h3>  -->
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
