@@ -38,11 +38,19 @@ h3{
   padding-bottom: 15px;
   color: white ;
 }
-
+.login{
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  background:  #fcf8e3;
+} 
 .login-fields{
   position: relative;
-  margin-top : 10px ;
+  margin-top : 20px ;
   text-align: center;
+  left: 12%;
 }
 .login-fields .fa-user , .fa-key{
   position: absolute;
@@ -56,12 +64,12 @@ h3{
 .login-fields .btn{ 
  margin-top : 10px ;
  width: 30%;
+ margin-right: 20%;
 }
- .login{
-  width: 500px;
-  height: 200px;
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  background:  #fcf8e3;
-} 
+
+.login-fields-header{
+  text-align:  center;
+}
+hr{
+  border-top: 1px solid #fff;
+}

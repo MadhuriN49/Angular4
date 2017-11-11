@@ -19,12 +19,14 @@ import {EmployeeService} from './employees/employee.service';
 import {DashboardService} from './dashboard/dashboard.service';
 import {AddMoreService} from './addMore/addMore.service';
 import {LoginService} from './login/login.service';
+import { NavService } from './nav/nav.service';
+
 
 @NgModule({
   imports: [ BrowserModule,FormsModule,AppRoutingModule],
   declarations: [ AppComponent, HomeComponent,NavbarComponent,EmployeeComponent,
                   DashboardComponent,AddMoreComponent,LoginComponent],
-  providers: [ EmployeeService,DashboardService,AddMoreService,LoginService],
+  providers: [ EmployeeService,DashboardService,AddMoreService,LoginService,NavService],
   bootstrap: [ AppComponent ]
 })
 

@@ -11,21 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var login_service_1 = require("./login.service");
+var nav_service_1 = require("../nav/nav.service");
 var LoginComponent = (function () {
-    function LoginComponent(router) {
+    function LoginComponent(router, loginService, navService) {
         this.router = router;
-        this.showModal = false;
+        this.loginService = loginService;
+        this.navService = navService;
     }
     ;
-    // ngOnInit() {
-    //     this.show ();
-    // }
-    // show() {
-    //    showModal = true;
-    // }
-    LoginComponent.prototype.submit = function (uName, pwd) {
-        if (uName != undefined && pwd != undefined) {
-            document.cookie = "username = name ; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+    LoginComponent.prototype.submit = function (userName, password) {
+        if (userName != undefined && password != undefined) {
+            this.navService.show();
             this.router.navigateByUrl('dashboard');
         }
     };
@@ -37,7 +34,9 @@ LoginComponent = __decorate([
         selector: "LoginService",
         templateUrl: "./login.html"
     }),
-    __metadata("design:paramtypes", [router_1.Router])
+    __metadata("design:paramtypes", [router_1.Router,
+        login_service_1.LoginService,
+        nav_service_1.NavService])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var employee_service_1 = require("./employee.service");
+var nav_service_1 = require("../nav/nav.service");
 var EmployeeComponent = (function () {
-    function EmployeeComponent(empService) {
+    function EmployeeComponent(empService, navService) {
         this.empService = empService;
+        this.navService = navService;
         this.showForm = false;
         this.newEmployee = {};
         this.isNewForm = false;
@@ -24,6 +26,7 @@ var EmployeeComponent = (function () {
     ;
     EmployeeComponent.prototype.ngOnInit = function () {
         this.getAllEmployess();
+        this.navService.show();
     };
     EmployeeComponent.prototype.getAllEmployess = function () {
         this.employees = this.empService.getAllEmployess();
@@ -67,7 +70,8 @@ EmployeeComponent = __decorate([
         selector: "EmployeeService",
         templateUrl: "./employee.html"
     }),
-    __metadata("design:paramtypes", [employee_service_1.EmployeeService])
+    __metadata("design:paramtypes", [employee_service_1.EmployeeService,
+        nav_service_1.NavService])
 ], EmployeeComponent);
 exports.EmployeeComponent = EmployeeComponent;
 //# sourceMappingURL=employee.component.js.map

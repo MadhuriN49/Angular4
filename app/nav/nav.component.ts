@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavService } from './nav.service';
 
 @Component({
   moduleId: module.id,
@@ -9,4 +10,5 @@ import { Router } from '@angular/router';
 
 export class NavbarComponent {
   appName: string = "Angular Boilerplate";
+  constructor( public nav: NavService ) {}
 }

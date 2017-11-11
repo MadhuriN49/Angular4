@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import {Employee} from './employee';
 import {EmployeeService} from './employee.service';
+import { NavService } from '../nav/nav.service';
 
 @Component({
     moduleId : module.id,
@@ -17,11 +18,13 @@ import {EmployeeService} from './employee.service';
     editedEmployee : any = {} ;
     copyEditObj : any = {};
     index : number;
-    constructor ( private empService : EmployeeService ){
+    constructor ( private empService : EmployeeService,
+                  private navService: NavService ){
 
     };
     ngOnInit() {
         this.getAllEmployess();
+        this.navService.show();
     }
 
     getAllEmployess(){

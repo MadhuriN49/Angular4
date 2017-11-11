@@ -11,12 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var dashboard_service_1 = require("./dashboard.service");
+var nav_service_1 = require("../nav/nav.service");
 var DashboardComponent = (function () {
-    function DashboardComponent(dashboardService) {
+    function DashboardComponent(dashboardService, navService) {
         this.dashboardService = dashboardService;
+        this.navService = navService;
     }
     ;
     DashboardComponent.prototype.ngOnInit = function () {
+        this.navService.show();
         this.getContent();
     };
     DashboardComponent.prototype.getContent = function () {
@@ -30,7 +33,8 @@ DashboardComponent = __decorate([
         selector: "DashboardService",
         templateUrl: "./dashboard.html"
     }),
-    __metadata("design:paramtypes", [dashboard_service_1.DashboardService])
+    __metadata("design:paramtypes", [dashboard_service_1.DashboardService,
+        nav_service_1.NavService])
 ], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map

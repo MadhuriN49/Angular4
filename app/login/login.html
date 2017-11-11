@@ -2,23 +2,26 @@
     <!-- <div class="row"> -->
         <div class="login">
             <form class="form-row">
+                    <div class="login-fields-header">
+                        <h4>Sign In</h4>
+                    </div><hr>
                 <!-- <div class="col-md-5"> -->
                     <div class="login-fields">
-                        <input type="text" class="form-control" placeholder="User Name" name ="uName" [(ngModel)] ="uName">
+                        <input type="text" class="form-control" placeholder="User Name" name ="userName" [(ngModel)] ="userName">
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
                 <!-- </div> -->
                 
                 <!-- <div class="col-md-5"> -->
                     <div class="login-fields">
-                      <input type="password" class="form-control" placeholder="Password" name ="pwd" [(ngModel)] = "pwd" >
+                      <input type="password" class="form-control" placeholder="Password" name ="password" [(ngModel)] = "password" >
                       <i class="fa fa-key" aria-hidden="true"></i>
                     </div>  
                 <!-- </div> -->
 
                 <!-- <div class="col-md-2"> -->
                     <div class="login-fields"> 
-                        <button type="submit" class="btn btn-primary" (click) = "submit(uName,pwd)" > Submit</button>
+                        <button type="submit" class="btn btn-primary" (click) = "submit(userName,password)" > Submit</button>
                     </div>
                 <!-- </div> -->
             </form>
