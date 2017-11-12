@@ -9,21 +9,21 @@ export class DashboardService{
                 title : "Component1",
                 content : "Dummy Content",
                 authorName : "Carl" ,
-                 datePosted : new Date(), 
+                datePosted : new Date().getDate() + " / "  + new Date().getMonth() + " / " + new Date().getFullYear(), 
                 imgPath: "app/shared/images/carl.jpeg"
                },
                {
                 title : "Component2",
-                content : "Dummy Content",
+                content : "Dummy Content Cookies are data, stored in small text files",
                 authorName : "Andria" ,
-                 datePosted : new Date(), 
+                 datePosted : new Date().getDate() + " / "  + new Date().getMonth() + " / " + new Date().getFullYear() , 
                 imgPath: "app/shared/images/andria.jpeg"
                },
                {
                 title : "Component3",
                 content : "Dummy Content",
                 authorName : "Max" ,
-                 datePosted : new Date(), 
+                datePosted : new Date().getDate() + " / "  + new Date().getMonth() + " / " + new Date().getFullYear() , 
                 imgPath: "app/shared/images/max.jpeg"
                },
             ];

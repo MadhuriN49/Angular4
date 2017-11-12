@@ -22,6 +22,10 @@ var LoginComponent = (function () {
     ;
     LoginComponent.prototype.submit = function (userName, password) {
         if (userName != undefined && password != undefined) {
+            sessionStorage.setItem('loggedInUser', userName);
+            var data = sessionStorage.getItem('loggedInUser');
+            console.log(data);
+            //    document.cookie = " loginUserName " = loginUserName; 
             this.navService.show();
             this.router.navigateByUrl('dashboard');
         }

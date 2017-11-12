@@ -20,6 +20,10 @@ export class LoginComponent  {
 
     submit ( userName: string , password : string) {
         if(  userName != undefined &&  password != undefined ){
+            sessionStorage.setItem('loggedInUser', userName);            
+            var data = sessionStorage.getItem('loggedInUser');
+            console.log(data);
+        //    document.cookie = " loginUserName " = loginUserName; 
            this.navService.show();
            this.router.navigateByUrl('dashboard');
         }

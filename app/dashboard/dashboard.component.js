@@ -24,6 +24,23 @@ var DashboardComponent = (function () {
     };
     DashboardComponent.prototype.getContent = function () {
         this.dashboardContents = this.dashboardService.getDashboardContentService();
+        // var data = JSON.parse(sessionStorage.getItem("addedData"));
+        // for (let d of data) {
+        //     this.dashboardContents.push(d);
+        // }
+        var newItems = JSON.parse(sessionStorage.getItem("addMore"));
+        for (var _i = 0, newItems_1 = newItems; _i < newItems_1.length; _i++) {
+            var newItem = newItems_1[_i];
+            this.dashboardContents.push(newItem);
+        }
+        var addedData = this.dashboardContents;
+        //  sessionStorage.setItem("addedData", JSON.stringify(addedData));
+        // this.dashboardContents.push(JSON.parse(sessionStorage.getItem("addMore")));
+    };
+    DashboardComponent.prototype.delete = function (index) {
+        this.dashboardContents.splice(index, 1);
+    };
+    DashboardComponent.prototype.addToDashboard = function () {
     };
     return DashboardComponent;
 }());

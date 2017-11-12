@@ -18,7 +18,27 @@ export class DashboardComponent implements OnInit{
         this.getContent();         
     }
     getContent(){
+      
         this.dashboardContents = this.dashboardService.getDashboardContentService();
+        // var data = JSON.parse(sessionStorage.getItem("addedData"));
+        // for (let d of data) {
+        //     this.dashboardContents.push(d);
+        // }
+        var newItems = JSON.parse(sessionStorage.getItem("addMore"));
+        for (let newItem of newItems) {
+            this.dashboardContents.push(newItem);
+        }
+        var addedData = this.dashboardContents;
+      //  sessionStorage.setItem("addedData", JSON.stringify(addedData));
+       // this.dashboardContents.push(JSON.parse(sessionStorage.getItem("addMore")));
+    }
+
+    delete(index : number){
+        this.dashboardContents.splice(index , 1 ); 
+    }
+
+    addToDashboard(){
+
     }
 
 }
